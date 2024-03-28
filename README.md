@@ -1,12 +1,13 @@
 # AIROC&trade;: Bluetooth&reg; Low Energy Perodic Adv
 
-This code example demonstrates the implementation of a Bluetooth LE Perodic ADV advertiser functionality using AIROC&trade; CYW20829B0.
+This code example demonstrates the implementation of a Bluetooth LE Perodic ADV advertiser functionality using AIROC&trade; CYW20829B0/CYW89829.
 
 ## Requirements
 
 - [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.0 or later (tested with v3.0)
 - Board support package (BSP) minimum required version for :
    - CYW920829M2EVK-02 : v1.0.2
+   - CYW989829M2EVB-01 : v1.0.1
 - Programming language: C
 - Associated parts: [AIROC&trade; CYW20829 Bluetooth&reg; LE SoC](https://www.infineon.com/cms/en/product/promopages/airoc20829)
 
@@ -295,6 +296,7 @@ Document title: *CE238424* – *AIROC&trade;: Bluetooth&reg; Low Energy Periodic
  Version | Description of change
  ------- | ---------------------
  1.0.0   | New code example
+ 1.1.0   | Added support for CYW989829M2EVB-01
 
 All referenced product or service names and trademarks are the property of their respective owners.
 

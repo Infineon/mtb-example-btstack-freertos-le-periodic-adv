@@ -85,7 +85,12 @@ VERBOSE=
 # ... then code in directories named COMPONENT_foo and COMPONENT_bar will be
 # added to the build
 #
+ifeq ($(TARGET),APP_CYW920829M2EVK-02)
 COMPONENTS=FREERTOS WICED_BLE CYW20829B0 BTFW-TX10
+endif # TARGET
+ifeq ($(TARGET),APP_CYW989829M2EVB-01)
+COMPONENTS=FREERTOS WICED_BLE CYW89829B0 BTFW-TX10
+endif # TARGET
 
 # Like COMPONENTS, but disable optional code that was enabled by default.
 DISABLE_COMPONENTS=FIRMWARE-TX10
