@@ -67,11 +67,11 @@ void app_bt_periodic_adv_generate_simulate_data_cb(TimerHandle_t cb_params)
     result = wiced_bt_ble_set_periodic_adv_data(APP_BT_PERIODIC_ADV_HANDLE, sizeof(simulate_sensor_data), simulate_sensor_data);
     if(result != WICED_BT_SUCCESS)
     {
-        WICED_BT_TRACE("%s set periodic adv data result:0x%04x", __FUNCTION__, result);
+        printf("%s set periodic adv data result:0x%04x\r\n", __FUNCTION__, result);
     }
     else
     {
-        WICED_BT_TRACE("%s set periodic adv data fake_data:%d", __FUNCTION__, fake_data);
+        printf("%s set periodic adv data fake_data:%d\r\n", __FUNCTION__, fake_data);
     }
 }
 #endif
@@ -103,12 +103,12 @@ void app_bt_periodic_adv_init(void)
     result = wiced_bt_set_local_bdaddr(bt_dev_bda, BLE_ADDR_PUBLIC);
     if(result != WICED_BT_SUCCESS)
     {
-        WICED_BT_TRACE("%s set local address result:0x%04x", __FUNCTION__, result);
+        printf("%s set local address result:0x%04x\r\n", __FUNCTION__, result);
         return;
     }
 
     wiced_bt_dev_read_local_addr(local_addr);
-    WICED_BT_TRACE("%s local address info:0x%02x:%02x:%02x:%02x:%02x:%02x", __FUNCTION__, local_addr[0], local_addr[1],
+    printf("%s local address info:0x%02x:%02x:%02x:%02x:%02x:%02x\r\n", __FUNCTION__, local_addr[0], local_addr[1],
                     local_addr[2], local_addr[3], local_addr[4], local_addr[5]);
 
     ///- set the Extended Adv paramameters
@@ -129,7 +129,7 @@ void app_bt_periodic_adv_init(void)
                                                 WICED_BT_BLE_EXT_ADV_SCAN_REQ_NOTIFY_DISABLE);  // scan_request_notif_enable
     if(result != WICED_BT_SUCCESS)
     {
-        WICED_BT_TRACE("%s set extern adv params result:0x%04x", __FUNCTION__, result);
+        printf("%s set extern adv params result:0x%04x\r\n", __FUNCTION__, result);
         return;
     }
 
@@ -144,17 +144,17 @@ void app_bt_periodic_adv_init(void)
             result = wiced_bt_ble_start_periodic_adv(APP_BT_PERIODIC_ADV_HANDLE, 1);
             if(result != WICED_BT_SUCCESS)
             {
-                WICED_BT_TRACE("%s enable periodic adv result:0x%04x", __FUNCTION__, result);
+                printf("%s enable periodic adv result:0x%04x\r\n", __FUNCTION__, result);
             }
         }
         else
         {
-            WICED_BT_TRACE("%s set periodic adv data result:0x%04x", __FUNCTION__, result);
+            printf("%s set periodic adv data result:0x%04x\r\n", __FUNCTION__, result);
         }
     }
     else
     {
-        WICED_BT_TRACE("%s set periodic adv params result:0x%04x", __FUNCTION__, result);
+        printf("%s set periodic adv params result:0x%04x\r\n", __FUNCTION__, result);
     }
 
     // Set extended ADV enable
@@ -169,7 +169,7 @@ void app_bt_periodic_adv_init(void)
 
     if (simulate_sensor_timer != NULL && pdPASS != xTimerStart(simulate_sensor_timer, 10u))
     {
-        WICED_BT_TRACE("Failed to start simulate_sensor_timer!");
+        printf("Failed to start simulate_sensor_timer!\r\n");
         CY_ASSERT(0);
     }
 #endif
