@@ -188,17 +188,11 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 
    </details>
 
-4. After programming, the application starts automatically. Observe the messages on the UART terminal, and wait for the device to be synced with the peer synchronizer (le-periodic-sync). Use the KitProg3 COM port to view the Bluetooth&reg; stack and application trace messages in the terminal window:
+4. After programming, the application starts automatically. Observe the messages on the UART terminal, and wait for the device to be synced with the peer synchronizer (le-periodic-sync). Use the KitProg3 COM port to view the Bluetooth&reg; stack and application trace messages in the terminal window and the periodic advertiser sends fake_data for every 5 sec and changes the fake_data every time what it sends.
 
    **Figure 1. Log messages on KitProg3 COM port**
 
-   ![](images/terminal-le-periodic-adv.png)
-
-
-   The periodic advertiser sends fake_data for every 5 sec and changes the fake_data every time what it sends.
-   **Figure 2. Fake data log messages**
-
-   ![](images/terminal-le-periodic-adv-fake-data-log.png)
+   ![](images/image1.png)
 
 ## Programming a CYW20829 board (when multiple boards are connected)
 
@@ -300,6 +294,7 @@ Document title: *CE238424* – *AIROC&trade;: Bluetooth&reg; Low Energy Periodic
  1.0.0   | New code example
  1.1.0   | Added support for CYW989829M2EVB-01
  2.0.0   | Added support for CYW989829M2EVB-03 ,BSP and BTStack-integration major update for BT Firmware as a separate asset
+ 2.1.0   | Update code example with btstack 4.1
 
 All referenced product or service names and trademarks are the property of their respective owners.
 
