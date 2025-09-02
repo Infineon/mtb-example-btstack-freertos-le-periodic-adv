@@ -86,13 +86,10 @@ VERBOSE=
 # added to the build
 #
 ifeq ($(TARGET),APP_CYW920829M2EVK-02)
-COMPONENTS=FREERTOS WICED_BLE CYW20829B0 BTFW-TX10
+COMPONENTS=FREERTOS WICED_BLE BTFW-TX10
 endif # TARGET
 ifeq ($(TARGET),APP_CYW989829M2EVB-01)
-COMPONENTS=FREERTOS WICED_BLE CYW89829B0 BTFW-BGA77-TX10
-endif # TARGET
-ifeq ($(TARGET),APP_CYW989829M2EVB-03)
-COMPONENTS=FREERTOS WICED_BLE CYW89829B0 BTFW-TX10
+COMPONENTS=FREERTOS WICED_BLE BTFW-TX10
 endif # TARGET
 
 # Like COMPONENTS, but disable optional code that was enabled by default.
@@ -180,23 +177,6 @@ ENABLE_SPY_TRACES ?= 0
 ifeq ($(ENABLE_SPY_TRACES),1)
 DEFINES+= ENABLE_BT_SPY_LOG DEBUG_UART_BAUDRATE=3000000
 endif
-
-# Using "fw-loader --device-list" from fw-loader,MTB toolbox, to find out the device serial number
-# replace the following serial number so it can be programmed to the correct device.
-#
-BRD?=1
-ifeq ($(BRD), 1)
-    _MTB_RECIPE_OPENOCD_CUSTOM_COMMAND+=adapter serial 1D13102003249400;
-else
-    ifeq ($(BRD), 2)
-        _MTB_RECIPE_OPENOCD_CUSTOM_COMMAND+=adapter serial 0B15146602070400;
-    else
-    # Edit the serial number for the HIDD board
-    #  _MTB_RECIPE_OPENOCD_CUSTOM_COMMAND+=adapter serial 0000000000000000;
-    endif
-endif
-DEFINES+=BOARD=$(BRD)
-$(info board $(BRD))
 
 # Locate ModusToolbox helper tools folders in default installation
 # locations for Windows, Linux, and macOS.

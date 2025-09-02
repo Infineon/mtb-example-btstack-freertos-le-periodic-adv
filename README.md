@@ -6,9 +6,8 @@ This code example demonstrates the implementation of a Bluetooth LE Perodic ADV 
 
 - [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.2 or later (tested with v3.2)
 - Board support package (BSP) minimum required version for :
-   - CYW920829M2EVK-02 : v2.0.0
-   - CYW989829M2EVB-01 : v2.0.0
-   - CYW989829M2EVB-03 : v2.0.0
+   - CYW920829M2EVK-02 : v3.0.0
+   - CYW989829M2EVB-01 : v3.0.0
 - Programming language: C
 - Associated parts: [AIROC&trade; CYW20829 Bluetooth&reg; LE SoC](https://www.infineon.com/cms/en/product/promopages/airoc20829)
 
@@ -19,7 +18,7 @@ This code example demonstrates the implementation of a Bluetooth LE Perodic ADV 
 ## Supported kits (make variable 'TARGET')
 
 - AIROC&trade; CYW20829 Bluetooth&reg; LE evaluation kit (`CYW920829M2EVK-02`)
-- AIROC&trade; CYW89829 Bluetooth&reg; LE Evaluation Kit (`CYW989829M2EVB-01`, `CYW989829M2EVB-03`)
+- AIROC&trade; CYW89829 Bluetooth&reg; LE Evaluation Kit (`CYW989829M2EVB-01`)
 
 ## Hardware setup
 
@@ -295,6 +294,7 @@ Document title: *CE238424* – *AIROC&trade;: Bluetooth&reg; Low Energy Periodic
  1.1.0   | Added support for CYW989829M2EVB-01
  2.0.0   | Added support for CYW989829M2EVB-03 ,BSP and BTStack-integration major update for BT Firmware as a separate asset
  2.1.0   | Update code example with btstack 4.1
+ 3.0.0   | Remove support for CYW989829M2EVB-03 and updated btstack-integration with version 6.X
 
 All referenced product or service names and trademarks are the property of their respective owners.
 
